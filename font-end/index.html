@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Instituto de Psicologia Lima & Mambelle - Psicologia, Neuropsicologia e Psicopedagogia com acolhimento e profissionalismo em Brasília, DF."
+    />
+    <meta
+      name="keywords"
+      content="psicologia, neuropsicologia, psicopedagogia, terapia, Brasília, saúde mental"
+    />
+    <meta name="author" content="Thamara Lima Nascimento" />
+    <meta
+      property="og:image"
+      content="https://limaemambelle.com.br/wp-content/uploads/2022/10/1-1-300x200.jpg"
+    />
+    <meta property="og:url" content="https://limaemambelle.com.br" />
+    <meta property="og:type" content="website" />
+    <title>Instituto Lima & Mambelle -Psicologia e Neuropsicologia</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            keyframes: {
+              wiggle: {
+                "0%, 100%": { transform: "rotate(-15deg) scale(1.1)" },
+                "50%": { transform: "rotate(15deg) scale(1.2)" },
+              },
+              fadeInup: {
+                "0%": {
+                  opacity: "0",
+                  transform: "translateY(30px) scale(0.95)",
+                },
+                "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+              },
+            },
+            animation: {
+              "fade-in-up": "fadeInup 0.8s ease-out both",
+              wiggle: "wiggle 1s ease-in-out infinite",
+            },
+            colors: {
+              "lima-dourado-safe": "#cb913a",
+              "lima-dourado-escuro": "#A3722E",
+              "lima-dourado": "#b37427",
+              "lima-branco": "#FFFFFF",
+              "lima-bege": "#F5E7D5",
+              "lima-fundo": "#F2F3F5",
+              "lima-cinza": "#111827",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Font Awesome for icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Inter, sans-serif;
+      }
+      .hero {
+        background-color: #f5e7d5;
+        padding: 50px 0;
+        text-align: center;
+      }
+      .section-title {
+        margin-bottom: 30px;
+      }
+      .gallery img {
+        height: 200px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <!--Header-->
+    <header
+      class="bg-lima-dourado shadow sticky top-0 z-50"
+      x-data="{ open: false }"
+    >
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="#home" class="flex items-center">
+          <img
+            src="./imag/logo.jpg"
+            alt="Logo Lima & Mambelle"
+            class="h-10 w-auto max-w-[120px]"
+          />
+        </a>
+
+        <!-- Botão hambúrguer -->
+        <button
+          @click="open = !open"
+          class="text-white text-2xl md:hidden focus:outline-none"
+        >
+          <i :class="open ? 'fas fa-times' : 'fas fa-bars'"></i>
+        </button>
+
+        <!-- Menu desktop -->
+        <nav class="hidden md:flex space-x-4" aria-label="Navegação Principal">
+          <a href="#home" class="text-lima-cinza hover:text-lima-branco"
+            >Home</a
+          >
+          <a href="#quem-somos" class="text-lima-cinza hover:text-lima-branco"
+            >Quem Somos</a
+          >
+          <a href="#diferencial" class="text-lima-cinza hover:text-lima-branco"
+            >Diferencial</a
+          >
+          <a
+            href="#profissionais"
+            class="text-lima-cinza hover:text-lima-branco"
+            >Profissionais</a
+          >
+          <a href="#servicos" class="text-lima-cinza hover:text-lima-branco"
+            >Serviços</a
+          >
+          <a href="#convenios" class="text-lima-cinza hover:text-lima-branco"
+            >Convênios</a
+          >
+          <a href="#depoimentos" class="text-lima-cinza hover:text-lima-branco"
+            >Depoimentos</a
+          >
+          <a href="#galeria" class="text-lima-cinza hover:text-lima-branco"
+            >Galeria</a
+          >
+          <a href="#localizacao" class="text-lima-cinza hover:text-lima-branco"
+            >Localização</a
+          >
+          <a href="#contato" class="text-lima-cinza hover:text-lima-branco"
+            >Contato</a
+          >
+          <a href="login.html" class="text-lima-cinza hover:text-lima-branco"
+            >Área Particular</a
+          >
+        </nav>
+      </div>
+
+      <!-- Menu mobile -->
+      <div
+        x-show="open"
+        x-transition
+        class="md:hidden bg-lima-dourado text-white space-y-2 px-6 py-4 absolute left-0 top-full w-full z-40 shadow-lg"
+      >
+        <a
+          href="#home"
+          @click="open = false"
+          class="block hover:text-lima-branco"
+          >Home</a
+        >
+        <a
+          href="#quem-somos"
+          @click="open = false"
+          class="block hover:text-lima-branco"
+          >Quem Somos</a
+        >
+        <a
+          href="#diferencial"
+          @click="open = false"
+          class="block hover:text-lima-branco"
+          >Diferencial</a
+        >
+        <a
+          href="#profissionais"
+          @click="open = false"
+          class="block hover:text-lima-branco"
+          >Profissionais</a
+        >
+        <a
+          href="#servicos"
+          @click="open = false"
+          class="block hover:text-lima-branco"
+          >Serviços</a
+        >
+        <a
+          href="#convenios"
+          @click="open = false"
+          class="block hover:text-lima-branco"
+          >Convênios</a
+        >
+        <a
+          href="#depoimentos"
+          @click="open = false"
+          class="block hover:text-lima-branco"
+          >Depoimentos</a
+        >
+        <a
+          href="#galeria"
+          @click="open = false"
+          class="block hover:text-lima-branco"
+          >Galeria</a
+        >
+        <a
+          href="#localizacao"
+          @click="open = false"
+          class="block hover:text-lima-branco"
+          >Localização</a
+        >
+        <a
+          href="#contato"
+          @click="open = false"
+          class="block hover:text-lima-branco"
+          >Contato</a
+        >
+        <a
+          href="login.html"
+          @click="open = false"
+          class="block hover:text-lima-branco"
+          >Área Particular</a
+        >
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="hero bg-lima-branco py-12 sm:py-20 text-center bg-cover bg-center relative"
+      style="background-image: url('./imag/IMG_2306.PNG')"
+    >
+      <div class="absolute inset-0 bg-lima-dourado opacity-20"></div>
+      <div
+        class="relative z-10 container mx-auto h-auto px-4"
+        x-data="{showHero:false}"
+        x-init="setTimeout(() => showHero = true, 200)"
+      >
+        <h1
+          class="text-4xl font-bold mb-4 text-lima-dourado"
+          x-show="showHero"
+          x-transition:enter="transition ease-out duration-1000"
+          x-transition:enter-start="opacity-0 translate-y-6 scale-95"
+          x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+        >
+          Bem-vindo ao Instituto de Psicologia Lima & Mambelle
+        </h1>
+        <h2
+          class="text-2xl sm:text-3xl font-semibold mb-6 text-lima-dourado-escuro"
+          x-show="showHero"
+          x-transition.delay.100ms
+        >
+          Psicologia e Neuropsicologia para todos
+        </h2>
+        <p
+          class="mb-4 text-lg text-lima-cinza"
+          x-show="showHero"
+          x-transition.delay.200ms
+        >
+          É um lugar onde você terá Paz!
+        </p>
+        <p
+          class="mb-4 text-lg text-lima-cinza"
+          x-show="showHero"
+          x-transition.delay.200ms
+        >
+          Você merece uma abordagem personalizada para sua saúde mental. É isso
+          que oferecemos neste lugar.
+        </p>
+        <p
+          class="mb-4 text-lg text-lima-cinza"
+          x-show="showHero"
+          x-transition.delay.300ms
+        >
+          Aqui acreditamos na importância da escuta qualificada na terapia com
+          empatia para atender todos os clientes.
+        </p>
+        <p
+          class="mb-6 text-lg text-lima-cinza"
+          x-show="showHero"
+          x-transition.delay.400ms
+        >
+          Cuidando da sua saúde mental com acolhimento e profissionalismo.
+        </p>
+        <a
+          href="#contato"
+          class="inline-block bg-lima-dourado py-3 px-8 rounded hover:bg-lima-fundo transition"
+          x-show="showHero"
+          x-transition.delay.500ms
+          aria-label="Entrar em contato"
+          >Entre em contato</a
+        >
+      </div>
+    </section>
+
+    <!-- Quem Somos -->
+    <section id="quem-somos" class="py-16 bg-lima-fundo">
+      <div class="container mx-auto px-4 max-w-4xl text-center">
+        <h2
+          class="text-3xl font-bold text-lima-dourado mb-6"
+          x-data="{show:false}"
+          x-intersect.once="show = true"
+          :class="show ? 'animate-fade-in-upa': ''"
+        >
+          Quem Somos
+        </h2>
+        <p class="text-lima-cinza mb-4">
+          Aqui você vai conhecer a nossa missão.
+        </p>
+        <h3 class="text-3x1 font-semibold text-lima-dourado-escuro mb-6">
+          Nossa missão
+        </h3>
+        <p class="text-lima-cinza mb-2">
+          Oferecer uma abordagem personalizada para a saúde mental, com
+          acolhimento e profissionalismo.
+        </p>
+        <h3 class="text-3x1 font-semibold text-lima-dourado-escuro mb-6">
+          Nossa Equipe
+        </h3>
+        <p class="text-lima-cinza">
+          Composta por profissionais qualificados e experientes que oferecem uma
+          abordagem personalizada para a saúde mental de todos os clientes.
+        </p>
+      </div>
+    </section>
+
+    <!-- Seção Diferencial -->
+    <section id="diferencial" class="py-16 bg-lima-bege">
+      <div class="container mx-auto px-4 max-w-4xl text-center">
+        <h2
+          class="text-3xl font-bold text-lima-dourado mb-6"
+          x-data="{show:false}"
+          x-intersect.once="show = true"
+          :class="show ? 'animate-fade-in-upa': ''"
+        >
+          Nosso Diferencial
+        </h2>
+        <p class="text-lima-cinza mb-4">
+          Aqui você vai conhecer o que nos diferencia dos outros institutos de
+          psicologia.
+        </p>
+        <div class="space-y-3 text-lima-cinza text-base">
+          <p>
+            Nossa equipe é composta por profissionais qualificados e experientes
+            que oferecem uma abordagem personalizada para a saúde mental.
+          </p>
+          <p>
+            Nosso compromisso é ajudar você a entender os desafios que enfrenta,
+            trabalhando juntos por soluções eficazes.
+          </p>
+          <p>Um lugar de paz, onde você encontrará acolhimento.</p>
+          <p>
+            Atendimento de excelência, proporcionando a melhor experiência no
+            nosso instituto.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Profissionais -->
+    <section id="profissionais" class="py-16 bg-lima-fundo">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-lima-dourado mb-10 text-center"
+          x-data="{show:false}"
+          x-intersect.once="show = true"
+        >
+          Nossas Profissionais
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <!-- Dra. Telma -->
+          <div
+            class="bg-lima-branco p-6 rounded-xl shadow text-center"
+            x-show="showCards"
+            x-transition:enter="transition ease-out duration-700"
+            x-transition:enter-start="opacity-0 translate-y-4"
+            x-transtion:enter-end="opacity-100 translate-y-0"
+          >
+            <img
+              src="./imag/Telma.jpg"
+              alt="Dra. Telma Gomes de Lima"
+              class="w-32 h-32 rounded-full mx-auto object-cover mb-4 transition-transform duration-500 ease-in-out hover:scale-110"
+            />
+            <h3 class="text-xl font-semibold text-lima-dourado-safe">
+              Dra. Telma Gomes de Lima
+            </h3>
+            <p class="text-lima-cinza text-sm">Psicóloga e Neuropsicóloga</p>
+            <p class="text-lima-cinza text-sm mt-2">
+              Especialista em Psicopedagogia Reeducativa e Clínica, Atendimento
+              Educacional Especializado (AEE) e Neuropsicologia. Atua com
+              abordagem TCC para todas as idades.
+            </p>
+          </div>
+
+          <!-- Dra. Taysa -->
+          <div
+            class="bg-lima-branco p-6 rounded-xl shadow text-center"
+            x-show="showCards"
+            x-transition:enter="transition ease-out duration-700"
+            x-transition:enter-start="opacity-0 translate-y-4"
+            x-transition:enter-end="opacity-100 translate-y-0"
+          >
+            <img
+              src="./imag/Thaysa.jpg"
+              alt="Dra. Taysa Mambelle"
+              class="w-32 h-32 rounded-full mx-auto object-cover mb-4 transition-transform duration-500 ease-in-out hover:scale-110"
+            />
+            <h3 class="text-xl font-semibold text-lima-dourado-safe">
+              Dra. Taysa Mambelle
+            </h3>
+            <p class="text-lima-cinza text-sm">Psicóloga</p>
+            <p class="text-lima-cinza text-sm mt-2">
+              Especialista em atendimento psicológico com foco em saúde mental,
+              acolhimento e escuta empática.
+            </p>
+          </div>
+
+          <!-- Dra. Jaqueline -->
+          <div
+            class="bg-lima-branco p-6 rounded-xl shadow text-center"
+            x-show="showCards"
+            x-transition:enter="transition ease-out duration-700"
+            x-transition:enter-start="opacity-0 translate-y-4"
+            x-transition:enter-end="opacity-100 translate-y-0"
+          >
+            <img
+              src="./imag/Jack.jpg"
+              alt="Dra. Jaqueline Teixeira da Silva"
+              class="w-32 h-32 rounded-full mx-auto object-cover mb-4 transition-transform duration-500 ease-in-out hover:scale-110"
+            />
+            <h3 class="text-xl font-semibold text-lima-dourado-safe">
+              Dra. Jaqueline Teixeira da Silva
+            </h3>
+            <p class="text-lima-cinza text-sm">Psicóloga</p>
+            <p class="text-lima-cinza text-sm mt-2">
+              Pós-graduada em TCC, Análise Comportamental e Neurociências.
+              Atendimento a adolescentes, adultos e idosos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Serviços -->
+    <section id="servicos" class="py-16 bg-lima-fundo">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-lima-dourado mb-10 text-center"
+          x-data="{show:false}"
+          x-intersect.once="show = true"
+          :class="show ? 'animate-fade-in-upa': ''"
+        >
+          Nossos Serviços
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+          <!-- Atendimento Psicológico -->
+          <div
+            class="relative rounded-xl overflow-hidden h-64 bg-cover bg-center shadow"
+            style="background-image: url('./imag/Atend.psi.png')"
+          >
+            <div class="absolute inset-0 bg-lima-bege opacity-70"></div>
+            <div
+              class="relative z-10 flex flex-col items-center justify-center h-full text-center text-lima-branco px-4"
+            >
+              <h3 class="text-xl font-semibold mb-2 text-lima-dourado-safe">
+                Atendimento Psicológico
+              </h3>
+              <p class="text-sm text-black">
+                Para adolescentes, adultos e idosos.
+              </p>
+            </div>
+          </div>
+
+          <!-- Avaliação Neuropsicológica -->
+          <div
+            class="relative rounded-xl overflow-hidden h-64 bg-cover bg-center shadow"
+            style="background-image: url('./imag/Neu.png')"
+          >
+            <div class="absolute inset-0 bg-lima-bege opacity-70"></div>
+            <div
+              class="relative z-10 flex flex-col items-center justify-center h-full text-center text-lima-branco px-4"
+            >
+              <h3 class="text-xl font-semibold mb-2 text-lima-dourado-safe">
+                Avaliação Neuropsicológica
+              </h3>
+              <p class="text-sm text-black">
+                Identificação de alterações no funcionamento cerebral.
+              </p>
+            </div>
+          </div>
+
+          <!-- Terapia de Casal -->
+          <div
+            class="relative rounded-xl overflow-hidden h-64 bg-cover bg-center shadow"
+            style="background-image: url('./imag/Couple.png')"
+          >
+            <div class="absolute inset-0 bg-lima-bege opacity-70"></div>
+            <div
+              class="relative z-10 flex flex-col items-center justify-center h-full text-center text-lima-branco px-4"
+            >
+              <h3 class="text-xl font-semibold mb-2 text-lima-dourado-safe">
+                Terapia de Casal
+              </h3>
+              <p class="text-sm text-black">
+                Apoio a casais para melhoria de relacionamento.
+              </p>
+            </div>
+          </div>
+
+          <!-- Psicopedagogia -->
+          <div
+            class="relative rounded-xl overflow-hidden h-64 bg-cover bg-center shadow"
+            style="background-image: url('./imag/Psicop.png')"
+          >
+            <div class="absolute inset-0 bg-lima-bege opacity-70"></div>
+            <div
+              class="relative z-10 flex flex-col items-center justify-center h-full text-center text-lima-branco px-4"
+            >
+              <h3 class="text-xl font-semibold mb-2 text-lima-dourado-safe">
+                Avaliação Psicopedagógica
+              </h3>
+              <p class="text-sm text-black">
+                Suporte para crianças e adolescentes com dificuldades escolares.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Convênios -->
+    <section id="convenios" class="py-16 bg-lima-fundo">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-lima-dourado mb-8 text-center"
+          x-data="{show:false}"
+          x-intersect.once="show = true"
+          :class="show ? 'animate-fade-in-upa': ''"
+        >
+          Os Convênios que são aceitos
+        </h2>
+        <p class="text-lima-cinza mb-6 text-center">
+          O Instituto Lima & Mambelle aceita diversos planos de saúde para
+          facilitar o acesso aos nossos serviços.
+        </p>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center"
+        >
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            AFEGE
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            AFEGF
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            ASEFE
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            CASEMBRAPA
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            CASSI
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            UNIMED
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            GAMA SAÚDE
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            AFEGO
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            AGF-ALLIANZ
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            AFED BRASAL
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            BACEN
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            CAMARA (CODEVASF)
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            CAESAN
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            CAMED
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            CASEC
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            CODEVASF
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            CNTI
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            CONAB
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            GDF INAS
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            PRÓ-SAUDE
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            PRÓ-SOCIAL
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            SAÚDE CAIXA
+          </div>
+          <div class="bg-lima-branco p-3 rounded shadow text-lima-dourado-safe">
+            UNIFISCO
+          </div>
+          <!-- Adicione outros convênios conforme necessário -->
+        </div>
+        <p class="mt-6 text-lima-cinza text-center">
+          Se você não encontrou seu plano, entre em contato conosco para
+          verificar se é aceito.
+        </p>
+        <p class="text-center text-lima-cinza mt-2">
+          <i class="fas fa-phone-alt mr-2"></i>
+          <strong>Telefone:</strong>
+          <a href="tel:+5561998834498" class="text-lima-dourado hover:underline"
+            >(61) 99883-4498</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <!-- Seção Depoimentos -->
+    <section
+      id="depoimentos"
+      class="py-16 bg-lima-bege"
+      x-data="{
+    current: 0,
+    items: [
+      { src: './depo/01.jpg', alt: 'Depoimento de cliente destacando o acolhimento da equipe' },
+      { src: './depo/02.jpg', alt: 'Depoimento sobre a qualidade do atendimento psicológico' },
+      { src: './depo/03.jpg', alt: 'Relato de paciente elogiando o ambiente do instituto' },
+      { src: './depo/04.jpg', alt: 'Depoimento agradecendo à terapeuta pela escuta empática' },
+      { src: './depo/05.jpg', alt: 'Comentário positivo sobre a avaliação neuropsicológica' },
+      { src: './depo/06.jpg', alt: 'Mensagem de cliente sobre a melhora emocional após a terapia' },
+      { src: './depo/07.jpg', alt: 'Depoimento falando da dedicação dos profissionais' },
+      { src: './depo/08.jpg', alt: 'Elogio ao ambiente acolhedor do instituto' },
+      { src: './depo/09.jpg', alt: 'Depoimento elogiando a escuta qualificada das psicólogas' },
+      { src: './depo/10.jpg', alt: 'Relato sobre superação com acompanhamento psicológico' },
+      { src: './depo/11.jpg', alt: 'Cliente satisfeita com o atendimento e suporte' },
+      { src: './depo/12.jpg', alt: 'Depoimento sobre confiança no trabalho do Instituto Lima & Mambelle' }
+    ]
+  }"
+    >
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-lima-dourado mb-6">
+          O que Nossos Clientes Dizem Sobre Nós!
+        </h2>
+        <p class="text-lima-cinza mb-8">
+          Aqui você encontra depoimentos reais de nossos clientes que passaram
+          por nossos serviços.
+        </p>
+
+        <!-- Carrossel -->
+        <div class="relative max-w-xl mx-auto">
+          <div class="overflow-hidden rounded shadow-lg">
+            <template x-for="(item, index) in items" :key="index">
+              <div x-show="current === index" x-transition>
+                <img
+                  :src="item.src"
+                  :alt="item.alt"
+                  class="w-full h-60 object-contain rounded"
+                />
+              </div>
+            </template>
+          </div>
+
+          <!-- Navegação -->
+          <div class="flex justify-center items-center mt-4 space-x-4">
+            <button
+              aria-label="Depoimento anterior"
+              @click="current = current === 0 ? items.length - 1 : current - 1"
+              class="bg-lima-dourado text-white px-3 py-1 rounded hover:bg-lima-dourado-escuro"
+            >
+              &#8592;
+            </button>
+            <button
+              aria-label="Próximo depoimento"
+              @click="current = (current + 1) % items.length"
+              class="bg-lima-dourado text-white px-3 py-1 rounded hover:bg-lima-dourado-escuro"
+            >
+              &#8594;
+            </button>
+          </div>
+
+          <!-- Indicadores -->
+          <div class="flex justify-center mt-4 space-x-2">
+            <template x-for="(item, index) in items" :key="index">
+              <div
+                :class="{
+              'bg-lima-dourado': current === index,
+              'bg-gray-300': current !== index
+            }"
+                class="w-3 h-3 rounded-full transition-all duration-300"
+              ></div>
+            </template>
+          </div>
+
+          <div class="mt-6 text-center">
+            <p class="text-lima-cinza mb-2">
+              <i class="fab fa-instagram"></i> Siga-nos no Instagram:
+            </p>
+            <a
+              href="https://instagram.com/limaemambelle"
+              target="_blank"
+              class="text-lima-dourado-safe hover:underline"
+            >
+              @limaemambelle
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Galeria -->
+    <section
+      id="galeria"
+      class="py-16 bg-lima-fundo"
+      x-data="{
+    modalOpen: false,
+    modalImg: '',
+    imagens: [
+      { src: './imag/01.jpg', alt: 'Recepção do Instituto Lima & Mambelle' },
+      { src: './imag/02.jpg', alt: 'Sala de atendimento com decoração acolhedora' },
+      { src: './imag/03.jpg', alt: 'Equipe do Instituto em atividade' },
+      { src: './imag/04.jpg', alt: 'Ambiente terapêutico confortável' },
+      { src: './imag/05.jpg', alt: 'Área de espera para pacientes' },
+      { src: './imag/06.jpg', alt: 'Corredor interno do Instituto' },
+      { src: './imag/07.jpg', alt: 'Espaço com materiais terapêuticos' },
+      { src: './imag/08.jpg', alt: 'Consultório preparado para atendimento' },
+      { src: './imag/09.jpg', alt: 'Detalhe da decoração do ambiente' },
+      { src: './imag/10.jpg', alt: 'Profissionais do Instituto em evento' },
+      { src: './imag/11.jpg', alt: 'Ambiente iluminado e agradável' },
+      { src: './imag/profissionais.jpg', alt: 'Foto oficial da equipe do Instituto' }
+    ],
+    init() {
+      this.$watch('modalOpen', (val) => {
+        if (val) {
+          this.$nextTick(() => this.$refs.fecharModal?.focus());
+        }
+      });
+    }
+  }"
+      x-init="init"
+    >
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-lima-dourado mb-8 text-center">
+          Nossa Galeria
+        </h2>
+        <p class="text-lima-cinza mb-6 text-center">
+          Veja nossos espaços e equipe em ação:
+        </p>
+
+        <!-- Grade de imagens -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <template x-for="imgObj in imagens" :key="imgObj.src">
+            <img
+              :src="imgObj.src"
+              :alt="imgObj.alt"
+              @click="modalImg = imgObj.src; modalOpen = true"
+              class="w-full h-48 object-cover rounded cursor-pointer hover:scale-105 transition-transform duration-300"
+            />
+          </template>
+        </div>
+
+        <!-- Modal com foco gerenciado -->
+        <div
+          x-show="modalOpen"
+          x-transition:enter="transition ease-out duration-500"
+          x-transition:enter-start="opacity-0 scale-95"
+          x-transition:enter-end="opacity-100 scale-100"
+          x-transition:leave="transition ease-in duration-400"
+          x-transition:leave-start="opacity-100 scale-100"
+          x-transition:leave-end="opacity-0 scale-95"
+          class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          @click.away="modalOpen = false"
+          @keydown.escape.window="modalOpen = false"
+          role="dialog"
+          aria-modal="true"
+        >
+          <div class="relative max-w-3xl w-full px-4">
+            <button
+              @click="modalOpen = false"
+              x-ref="fecharModal"
+              class="absolute top-2 right-2 text-white text-3xl font-bold hover:text-lima-dourado transition"
+            >
+              &times;
+            </button>
+            <img
+              :src="modalImg"
+              class="w-full max-h-[80vh] object-contain rounded-lg shadow-lg"
+              alt="Imagem ampliada da galeria"
+            />
+          </div>
+        </div>
+
+        <div class="mt-6 text-center">
+          <p class="text-lima-cinza mb-2">
+            <i class="fab fa-instagram"></i> Siga-nos no Instagram:
+          </p>
+          <a
+            href="https://instagram.com/limaemambelle"
+            target="_blank"
+            class="text-lima-dourado hover:underline"
+          >
+            @limaemambelle
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Localização -->
+    <section id="localizacao" class="py-16 bg-lima-fundo">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-lima-dourado mb-8 text-center"
+          x-data="{show:false}"
+          x-intersect.once="show = true"
+          :class="show ? 'animate-fade-in-upa': ''"
+        >
+          Nossa Localização
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Mapa -->
+          <div class="w-full h-96 rounded shadow overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.280929297577!2d-48.023696799999996!3d-15.841825499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a330c6fe49cfd%3A0x7cf1d67c3b171c72!2sInstituto%20de%20Psicologia%20Lima%20%26%20Mambelle!5e0!3m2!1spt-BR!2sbr!4v1748551816458!5m2!1spt-BR!2sbr"
+              class="w-full h-full"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localização do Instituto Lima & Mambelle"
+            ></iframe>
+          </div>
+
+          <!-- Informações -->
+          <div
+            class="bg-lima-branco p-6 rounded shadow flex flex-col justify-center space-y-4"
+          >
+            <h3 class="text-xl font-semibold text-lima-dourado">
+              <i class="fas fa-map-marker-alt mr-2"></i> Endereço
+            </h3>
+            <p class="text-lima-cinza">
+              Águas Claras Shopping, Av. das Araucárias, 1835 - 3° Andar, Sala
+              336 - Águas Claras, Brasília - DF, 71936-250
+            </p>
+
+            <h3 class="text-xl font-semibold text-lima-dourado mt-4">
+              <i class="fas fa-phone-alt mr-2"></i> Telefone
+            </h3>
+            <a
+              href="tel:+5561998834498"
+              class="text-lima-dourado-safe hover:underline transition-colors duration-200"
+            >
+              +55 61 99883-4498
+            </a>
+
+            <h3 class="text-xl font-semibold text-lima-dourado mt-4">
+              <i class="fas fa-envelope mr-2"></i> E-mail
+            </h3>
+            <a
+              href="mailto:institutolimaemambelle@gmail.com"
+              class="text-lima-dourado-safe hover:underline transition-colors duration-200"
+            >
+              institutolimaemambelle@gmail.com
+            </a>
+
+            <h3 class="text-xl font-semibold text-lima-dourado mt-6">
+              <i class="fas fa-calendar-alt mr-2"></i> Horário de Funcionamento
+            </h3>
+            <p class="text-lima-cinza">
+              <strong>Segunda a Sexta:</strong> 8h às 20h
+            </p>
+            <p class="text-lima-cinza"><strong>Sábado:</strong> 8h às 14h</p>
+            <p class="text-lima-cinza mb-4">
+              <strong>Domingo:</strong> Fechado
+            </p>
+
+            <!-- Botão -->
+            <a
+              href="https://www.google.com/maps/dir//Instituto+de+Psicologia+Lima+%26+Mambelle"
+              target="_blank"
+              class="inline-block bg-lima-dourado-escuro text-white px-6 py-2 rounded hover:bg-lima-dourado transition"
+            >
+              <i class="fas fa-location-arrow mr-2"></i> Ver a rota no Google
+              Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Seção Contato-->
+    <section id="contato" class="py-16 bg-lima-fundo">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-lima-dourado mb-8 text-center"
+          x-data="{show:false}"
+          x-intersect.once="show = true"
+          :class="show ? 'animate-fade-in-upa': ''"
+        >
+          Entre em Contato
+        </h2>
+        <div class="max-w-lg mx-auto">
+          <form
+            id="formContato"
+            class="bg-lima-branco p-6 rounded shadow space-y-4"
+          >
+            <!-- Nome -->
+            <div>
+              <label class="block text-lima-cinza mb-1" for="nome">Nome</label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                required
+                aria-required="true"
+                placeholder="Seu nome"
+                class="w-full p-2 border border-lima-cinza rounded focus:outline-none focus:ring-2 focus:ring-lima-dourado"
+              />
+            </div>
+
+            <!-- E-mail -->
+            <div>
+              <label class="block text-lima-cinza mb-1" for="email"
+                >E-mail</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                aria-required="true"
+                placeholder="Seu e-mail"
+                class="w-full p-2 border border-lima-cinza rounded focus:outline-none focus:ring-2 focus:ring-lima-dourado"
+              />
+            </div>
+
+            <!-- Telefone -->
+            <div>
+              <label class="block text-lima-cinza mb-1" for="telefone"
+                >Telefone</label
+              >
+              <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                required
+                aria-required="true"
+                placeholder="Seu telefone"
+                class="w-full p-2 border border-lima-cinza rounded focus:outline-none focus:ring-2 focus:ring-lima-dourado"
+              />
+            </div>
+
+            <!-- Mensagem -->
+            <div>
+              <label class="block text-lima-cinza mb-1" for="mensagem"
+                >Mensagem</label
+              >
+              <textarea
+                id="mensagem"
+                name="mensagem"
+                rows="4"
+                required
+                aria-required="true"
+                placeholder="Sua mensagem"
+                class="w-full p-2 border border-lima-cinza rounded focus:outline-none focus:ring-2 focus:ring-lima-dourado"
+              ></textarea>
+            </div>
+
+            <!-- Botão -->
+            <button
+              type="submit"
+              aria-label="Enviar mensagem"
+              class="w-full bg-lima-dourado-escuro text-white py-3 rounded hover:bg-lima-dourado transition"
+            >
+              Enviar Mensagem
+            </button>
+          </form>
+        </div>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const form = document.getElementById("formContato");
+          const feedback = document.createElement("div");
+          form.appendChild(feedback);
+
+          form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const nome = document.getElementById("nome").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const telefone = document.getElementById("telefone").value.trim();
+            const mensagem = document.getElementById("mensagem").value.trim();
+
+            // Validação de e-mail
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+              feedback.textContent = "Por favor, insira um e-mail válido.";
+              feedback.className = "text-red-500 mt-2";
+              return;
+            }
+
+            // Validação de telefone (exemplo simples)
+            const telefoneRegex = /^\d{10,15}$/;
+            if (!telefoneRegex.test(telefone)) {
+              feedback.textContent =
+                "Por favor, insira um telefone válido (apenas números, 10-15 dígitos).";
+              feedback.className = "text-red-500 mt-2";
+              return;
+            }
+
+            // Validação de campos vazios
+            if (!nome || !email || !telefone || !mensagem) {
+              feedback.textContent = "Por favor, preencha todos os campos.";
+              feedback.className = "text-red-500 mt-2";
+              return;
+            }
+
+            // Saudação com base na hora
+            const hora = new Date().getHours();
+            let saudacao = "Olá";
+            if (hora >= 6 && hora < 12) saudacao = "Bom dia";
+            else if (hora >= 12 && hora < 18) saudacao = "Boa tarde";
+            else saudacao = "Boa noite";
+
+            const msg = `
+${saudacao}, equipe *Lima & Mambelli*! 👋
+
+*Novo contato pelo site:*
+*Nome:* ${nome}
+*E-mail:* ${email}
+*Telefone:* ${telefone}
+*Mensagem:* ${mensagem}
+
+Aguardo o retorno. Obrigado(a)!
+`.trim();
+
+            const textoFinal = encodeURIComponent(msg);
+            const numeroWhatsApp = "5561998834498"; // Configurável
+            const url = `https://wa.me/${numeroWhatsApp}?text=${textoFinal}`;
+
+            // Tentar abrir WhatsApp
+            const popup = window.open(url, "_blank");
+            if (!popup) {
+              feedback.textContent =
+                "Erro: Permita pop-ups ou clique aqui para enviar.";
+              feedback.innerHTML = `<a href="${url}" target="_blank" class="text-blue-500 underline">Enviar mensagem</a>`;
+              feedback.className = "text-red-500 mt-2";
+              return;
+            }
+
+            // Feedback de sucesso
+            feedback.textContent =
+              "Mensagem enviada com sucesso! Entraremos em contato em breve.";
+            feedback.className = "text-green-500 mt-2";
+            form.reset();
+          });
+        });
+      </script>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-white bg-lima-dourado-escuro">
+      <p>
+        &copy; 2025 Instituto Lima & Mambelle. Desenvolvido por Thamara Lima
+        Nascimento – (61) 99224-4340.
+      </p>
+    </footer>
+    <!-- Btn Zap com animação exagerada -->
+    <a
+      href="https://wa.me/5561998834498?text=Olá..."
+      target="_blank"
+      class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 z-50 animate-[wiggle_1s_ease-in-out_infinite]"
+      aria-label="Fale conosco pelo WhatsApp"
+    >
+      <i class="fab fa-whatsapp text-white text-[24px]"></i>
+    </a>
+  </body>
+</html>

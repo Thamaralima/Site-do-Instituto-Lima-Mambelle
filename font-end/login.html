@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR" x-data="{ usuario: '', senha: '', erro: false }">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Área Particular</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            keyframes: {
+              wiggle: {
+                "0%, 100%": { transform: "rotate(-15deg) scale(1.1)" },
+                "50%": { transform: "rotate(15deg) scale(1.2)" },
+              },
+              fadeInup: {
+                "0%": {
+                  opacity: "0",
+                  transform: "translateY(30px) scale(0.95)",
+                },
+                "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+              },
+            },
+            animation: {
+              "fade-in-up": "fadeInup 0.8s ease-out both",
+              wiggle: "wiggle 1s ease-in-out infinite",
+            },
+            colors: {
+              "lima-dourado": "#cb913a",
+              "lima-dourado-escuro": "#A3722E",
+              "lima-branco": "#FFFFFF",
+              "lima-bege": "#F5E7D5",
+              "lima-fundo": "#F2F3F5",
+              "lima-cinza": "#111827",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <body
+      class="bg-lima-fundo min-h-screen flex items-center justify-center font-sans"
+    >
+      <div class="bg-white p-8 rounded shadow-md w-full max-w-md text-center">
+        <h1 class="text-2xl font-bold mb-4 text-lima-dourado">
+          Área Particular
+        </h1>
+        <p class="text-lima-cinza mb-6">Faça login para acessar o sistema</p>
+
+        <!-- Formulário -->
+        <form
+          @submit.prevent="
+          if (usuario === 'psicologa' && senha === '1234') {
+            erro = false;
+            window.location.href = 'area.html';
+          } else {
+            erro = true;
+          }
+        "
+          class="space-y-4 text-left"
+        >
+          <div>
+            <label for="usuario" class="block mb-1 text-lima-cinza"
+              >Usuário</label
+            >
+            <input
+              type="text"
+              id="usuario"
+              x-model="usuario"
+              required
+              class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-lima-dourado"
+            />
+          </div>
+
+          <div>
+            <label for="senha" class="block mb-1 text-lima-cinza">Senha</label>
+            <input
+              type="password"
+              id="senha"
+              x-model="senha"
+              required
+              class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-lima-dourado"
+            />
+          </div>
+
+          <template x-if="erro">
+            <p class="text-red-500 text-sm">Usuário ou senha incorretos.</p>
+          </template>
+
+          <button
+            type="submit"
+            href="area.html"
+            class="w-full bg-lima-dourado-escuro text-white py-2 rounded hover:bg-lima-dourado transition"
+          >
+            Entrar
+          </button>
+        </form>
+      </div>
+    </body>
+  </head>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR" x-data="{ usuario: '', senha: '', erro: false }">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Área Particular</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            keyframes: {
+              wiggle: {
+                "0%, 100%": { transform: "rotate(-15deg) scale(1.1)" },
+                "50%": { transform: "rotate(15deg) scale(1.2)" },
+              },
+              fadeInup: {
+                "0%": {
+                  opacity: "0",
+                  transform: "translateY(30px) scale(0.95)",
+                },
+                "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+              },
+            },
+            animation: {
+              "fade-in-up": "fadeInup 0.8s ease-out both",
+              wiggle: "wiggle 1s ease-in-out infinite",
+            },
+            colors: {
+              "lima-dourado": "#cb913a",
+              "lima-dourado-escuro": "#A3722E",
+              "lima-branco": "#FFFFFF",
+              "lima-bege": "#F5E7D5",
+              "lima-fundo": "#F2F3F5",
+              "lima-cinza": "#111827",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-lima-fundo min-h-screen flex items-center justify-center font-sans"
+  >
+    <!-- area.html -->
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Área Particular - Em Construção</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+      </head>
+      <body
+        class="bg-lima-fundo flex items-center justify-center min-h-screen text-center px-4"
+      >
+        <div>
+          <h1 class="text-3xl font-bold text-lima-dourado mb-4">
+            Área em Construção
+          </h1>
+          <p class="text-lima-cinza mb-6">
+            Essa área será exclusiva para psicólogas do Instituto.
+          </p>
+          <img
+            src="./imag/em-construcao.jpg"
+            alt="Em construção"
+            class="mx-auto w-48"
+          />
+        </div>
+      </body>
+    </html>
+  </body>
+</html>
